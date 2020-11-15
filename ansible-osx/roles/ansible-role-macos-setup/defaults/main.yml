@@ -1,0 +1,6 @@
+---
+# defaults file for ansible-role-macos-setup
+
+install_oh_my_zsh: no
+pip_installed_packages: []
+directories_to_create: []

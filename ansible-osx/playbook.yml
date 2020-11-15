@@ -1,0 +1,12 @@
+---
+#- hosts: all
+#  become: yes
+#  become_method: sudo
+#  roles: []
+#    #- ansible-role-macos-harden
+- hosts: all
+  become: no
+  become_method: sudo
+  roles:
+    - ansible-role-macos-setup
+    - ansible-role-macos-homebrew

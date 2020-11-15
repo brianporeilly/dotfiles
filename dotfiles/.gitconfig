@@ -1,0 +1,28 @@
+[user]
+	name = Brian O'Reilly
+	email = brianporeilly@gmail.com
+[core]
+	excludesfile = ~/.gitignore_global
+[color]
+  ui = true
+[push]
+  default = simple
+[gpg]
+	program = gpg
+[alias]
+	up = "!git remote update -p; git merge --ff-only @{u}"
+    unstage = reset HEAD --
+	cached = diff --cached
+	dc = diff --cached
+    lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+[pager]
+# Show diffs with the diff-so-fancy tool, and seed the pager with a seach
+# pattern so files can be jumped to with n/N
+  log = diff-so-fancy | less --pattern='^(added|deleted|modified): '
+  show = diff-so-fancy | less --pattern='^(added|deleted|modified): '
+  diff = diff-so-fancy | less --pattern='^(added|deleted|modified): '
+# Clone git repos with URLs like "gh:alexpearce/dotfiles"
+[url "https://github.com/"]
+  insteadOf = "gh:"
+[url "git@github.com:"]
+  pushInsteadOf = "gh:"

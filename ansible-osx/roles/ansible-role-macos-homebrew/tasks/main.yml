@@ -1,0 +1,50 @@
+---
+# tasks file for ansible-role-macos-homebrew
+
+- name: "Check if homebrew is installed"
+  stat:
+    path: /usr/local/bin/brew
+  register: homebrew_check
+
+- name: "Install homebrew if not installed"
+  shell: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  when: not homebrew_check.stat.exists
+
+- name: "Update homebrew"
+  community.general.homebrew:
+    update_homebrew: yes
+
+- name: "Upgrade homebrew packages"
+  community.general.homebrew:
+    upgrade_all: "{{ homebrew_upgrade_all_packages }}"
+
+- name: "Tap homebrew repositories"
+  community.general.homebrew_tap:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew_taps }}"
+
+- name: "Install homebrew packages"
+  community.general.homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew_installed_packages }}"
+
+- name: "Uninstall homebrew packages"
+  community.general.homebrew:
+    name: "{{ item }}"
+    state: absent
+  with_items: "{{ homebrew_uninstalled_packages }}"
+
+- name: "Install homebrew cask packages"
+  community.general.homebrew_cask:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ homebrew_installed_cask_packages }}"
+
+- name: "Uninstall homebrew cask packages"
+  community.general.homebrew_cask:
+    name: "{{ item }}"
+    state: absent
+    accept_external_apps: yes
+  with_items: "{{ homebrew_uninstalled_cask_packages }}"

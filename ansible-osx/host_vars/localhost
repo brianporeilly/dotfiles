@@ -1,0 +1,91 @@
+---
+
+system_hostname: osxicle
+
+# /etc/hosts (https://github.com/StevenBlack/hosts)
+#hosts_download_location: "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts"
+
+# community.general.homebrew
+homebrew_installed_packages:
+  - git
+  - ruby
+  - coreutils
+  - ansible
+  - awscli
+  - consul
+  - curl
+  - diff-so-fancy
+  - ffmpeg
+  - gifsicle
+  - go
+  - gnupg
+  #- gradle
+  - helm
+  - httpie
+  - jq
+  - kubernetes-cli
+  - mas
+  #- maven
+  - mongocli
+  - nmap
+  - node@10
+  - openssl
+  - packer
+  - postgresql
+  - python
+  - screen
+  - sqlite
+  - terraform
+  - thefuck
+  - tmux
+  - tree
+  - vault
+  - vim
+  - watch
+  - wget
+  - xz
+  # GNU
+  - coreutils
+  - dos2unix
+  - findutils
+  - fzf
+  - readline
+  - gawk
+
+homebrew_uninstalled_packages: []
+homebrew_upgrade_all_packages: no
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+  - homebrew/cask-fonts
+  - mongodb/brew
+homebrew_installed_cask_packages:
+  - android-platform-tools
+  - docker
+  - google-chrome
+  #- google-chrome-canary
+  - firefox
+  - jetbrains-toolbox
+  - keybase
+  - qlstephen
+  - vagrant
+  - virtualbox
+  - virtualbox-extension-pack
+  - wireshark
+  - vlc
+  # fonts
+  - font-fontawesome
+  - font-awesome-terminal-fonts
+  - font-hack
+  - font-source-code-pro
+homebrew_uninstalled_cask_packages: []
+
+install_oh_my_zsh: yes
+
+pip_installed_packages:
+  - powerline-status
+
+directories_to_create:
+  - ~/Developer
+  - ~/Developer/go
+  - ~/.local/bin

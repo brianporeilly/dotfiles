@@ -1,0 +1,9 @@
+---
+# defaults file for ansible-role-macos-homebrew
+
+homebrew_installed_packages: []
+homebrew_uninstalled_packages: []
+homebrew_upgrade_all_packages: no
+homebrew_taps: []
+homebrew_installed_cask_packages: []
+homebrew_uninstalled_cask_packages: []
