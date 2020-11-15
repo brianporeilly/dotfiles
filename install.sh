@@ -26,7 +26,7 @@ if [[ $? != 0 ]]; then
   echo "installed virtualenv"
 fi
 
-PATH=./venv/bin:$PATH
+PATH=`pwd`/venv/bin:$PATH
 
 # install ansible
 echo "checking ansible..."
@@ -51,7 +51,8 @@ echo "Please enter your sudo password"
 read -s PASSWORD
 
 cd ansible-osx
-~/Library/Python/2.7/bin/ansible-galaxy install -r requirements.yml
-~/Library/Python/2.7/bin/ansible-playbook playbook.yml --extra-vars='ansible_become_pass=$PASSWORD'
+ansible-galaxy install -r requirements.yml
+ansible-playbook playbook.yml --extra-vars='ansible_become_pass=$PASSWORD'
 
+cd ..
 cp ./dotfiles/.[^.]* ~/
