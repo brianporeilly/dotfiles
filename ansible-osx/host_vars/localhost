@@ -1,6 +1,9 @@
 ---
 
-system_hostname: osxicle
+system_hostname: {HOSTNAME}
+
+user_fullname: {USER_FULLNAME}
+user_email: {USER_EMAIL}
 
 # /etc/hosts (https://github.com/StevenBlack/hosts)
 #hosts_download_location: "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts"
@@ -24,6 +27,8 @@ homebrew_installed_packages:
   - httpie
   - jq
   - kubernetes-cli
+  - k9s
+  - kubectx
   - mas
   #- maven
   - mongocli
@@ -63,7 +68,7 @@ homebrew_installed_cask_packages:
   - android-platform-tools
   - docker
   - google-chrome
-  #- google-chrome-canary
+  #- google-chrome-canary (figure out right name for this?)
   - firefox
   - jetbrains-toolbox
   - keybase
@@ -89,3 +94,34 @@ directories_to_create:
   - ~/Developer
   - ~/Developer/go
   - ~/.local/bin
+
+dotfiles:
+  - .gitconfig
+  - .gitignore_global
+  - .vimrc
+  - .ideavimrc
+  - .zshrc
+
+zsh_theme: robbyrussell
+zsh_plugins:
+  - git
+  - brew
+  - colorize
+  - copyfile
+  - docker
+  - docker-compose
+  - encode64
+  - python
+  - thefuck
+  - timer
+  - z
+zshrc_extra: |-
+  alias zshrc="vim ~/.zshrc"
+  alias gdc="git diff --cached"
+  alias k="kubectl"
+  alias k9="k9s"
+  alias ktx="kubectx"
+  alias kns="kubens"
+  export EDITOR='vim'
+  export GOPATH="${HOME}/Developer/go"
+  export PATH="${HOME}/.local/bin:${GOPATH//://bin:}/bin:$PATH"

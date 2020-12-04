@@ -1,4 +1,5 @@
 ---
+# TODO: finalize the hardening role against the latest CIS Mac OS docs and re-enable this
 #- hosts: all
 #  become: yes
 #  become_method: sudo
