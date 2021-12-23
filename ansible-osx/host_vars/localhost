@@ -26,20 +26,27 @@ homebrew_installed_packages:
   - helm
   - httpie
   - jq
+  - kitty
   - kubernetes-cli
   - k9s
   - kubectx
+  - kube-ps1
   - mas
   #- maven
   - mongocli
+  - ncdu
   - nmap
-  - node@10
+  - node
   - openssl
   - packer
+  - pass
   - postgresql
   - python
+  - q
+  - qrencode
   - screen
   - sqlite
+  - teleport
   - terraform
   - thefuck
   - tmux
@@ -49,6 +56,8 @@ homebrew_installed_packages:
   - watch
   - wget
   - xz
+  - 1password-cli
+  - expect
   # GNU
   - coreutils
   - dos2unix
@@ -63,16 +72,20 @@ homebrew_taps:
   - homebrew/core
   - homebrew/cask
   - homebrew/cask-fonts
+  - homebrew/cask-versions
   - mongodb/brew
 homebrew_installed_cask_packages:
   - android-platform-tools
   - docker
   - google-chrome
-  #- google-chrome-canary (figure out right name for this?)
+  - google-chrome-canary
   - firefox
+  - Insomnia
   - jetbrains-toolbox
   - keybase
-  - qlstephen
+  - kitty
+  # - libreoffice
+  # - qlstephen
   - vagrant
   - virtualbox
   - virtualbox-extension-pack
@@ -105,6 +118,7 @@ dotfiles:
 zsh_theme: robbyrussell
 zsh_plugins:
   - git
+  - gitfast
   - brew
   - colorize
   - copyfile
@@ -125,3 +139,6 @@ zshrc_extra: |-
   export EDITOR='vim'
   export GOPATH="${HOME}/Developer/go"
   export PATH="${HOME}/.local/bin:${GOPATH//://bin:}/bin:$PATH"
+  source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+  PS1='$(kube_ps1)'$PS1
+
