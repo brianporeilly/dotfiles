@@ -5,6 +5,8 @@ system_hostname: {HOSTNAME}
 user_fullname: {USER_FULLNAME}
 user_email: {USER_EMAIL}
 
+screenshots_location: "${HOME}/Pictures/Screenshots"
+
 # /etc/hosts (https://github.com/StevenBlack/hosts)
 #hosts_download_location: "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts"
 
@@ -26,7 +28,6 @@ homebrew_installed_packages:
   - helm
   - httpie
   - jq
-  - kitty
   - kubernetes-cli
   - k9s
   - kubectx
@@ -56,7 +57,7 @@ homebrew_installed_packages:
   - watch
   - wget
   - xz
-  - 1password-cli
+  # 1password-cli requirements
   - expect
   # GNU
   - coreutils
@@ -75,6 +76,7 @@ homebrew_taps:
   - homebrew/cask-versions
   - mongodb/brew
 homebrew_installed_cask_packages:
+  - 1password-cli
   - android-platform-tools
   - docker
   - google-chrome
@@ -106,6 +108,7 @@ pip_installed_packages:
 directories_to_create:
   - ~/Developer
   - ~/Developer/go
+  - ~/Pictures/Screenshots
   - ~/.local/bin
 
 dotfiles:

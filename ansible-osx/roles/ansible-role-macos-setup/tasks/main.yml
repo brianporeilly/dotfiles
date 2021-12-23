@@ -139,8 +139,8 @@
 - name: "Require password immediately after sleep or screen saver begins"
   command: defaults write com.apple.screensaver askForPasswordDelay -int 0
 
-- name: "Save screenshots to the desktop"
-  command: defaults write com.apple.screencapture location -string "${HOME}/Desktop"
+- name: "Save screenshots to a custom location"
+  command: defaults write com.apple.screencapture location -string "{{ screenshots_location }}"
 
 - name: "Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)"
   command: defaults write com.apple.screencapture type -string "png"
