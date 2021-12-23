@@ -1,6 +1,2 @@
 collections:
-  # TODO: switch to name-based pull when 1.3.0 is released. Issue with homebrew_cask not recognizing `-` in cask names
-  #- community.general
-  - name: https://github.com/ansible-collections/community.general.git
-    type: git
-    version: main
+  - community.general
